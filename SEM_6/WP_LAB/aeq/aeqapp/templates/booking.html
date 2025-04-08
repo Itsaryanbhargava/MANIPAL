@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOKING</title>
+    </head>
+    <style>
+        input[type="submit"] {
+        background-color: #15ff00; /* Bright gold/yellow */
+        color: black;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+        input[type="submit"]:hover {
+        background-color: #eeba0f; /* Slightly darker yellow on hover */
+    }
+
+    </style>
+
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type ="submit">Submit</button>
+        </form>
+    </body>
+</html>

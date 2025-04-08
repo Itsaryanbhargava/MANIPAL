@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADD A DOCTOR</title>
+    </head>
+
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <button type="submit">SUBMIT</button>
+        </form>
+
+        {% if message %}
+        <p style="color: blue;">{{ message }}</p>
+        {% endif %}
+
+        <a href="{% url 'appointment_view' %}">BOOK APPOINTMENT</a>
+    </body>
+</html>

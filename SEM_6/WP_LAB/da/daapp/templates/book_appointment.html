@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            BOOK YOUR APPOINTMENT:
+        </title>
+    </head>
+
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">SUBMIT</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+
+        {% endif %}
+        <a href="{% url 'doctor_view' %}">ADD_DOCTOR</a>
+    </body>
+</html>

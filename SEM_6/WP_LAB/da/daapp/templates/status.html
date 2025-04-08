@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            STATUS CONFIRMED
+        </title>
+    </head>
+    <body>
+        {% if message %}
+            <p> {{ message }} </p>
+        {% endif %}
+        <a href="{% url 'appointment_view' %}">Back to Booking Page</a>
+    </body>
+</html>
