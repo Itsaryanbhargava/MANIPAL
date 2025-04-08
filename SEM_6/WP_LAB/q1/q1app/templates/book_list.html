@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Overview</title>
+</head>
+<body>
+
+    <h2>📚 All Books</h2>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong> - {{ book.publication_date }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>👨‍💼 All Authors</h2>
+    <ul>
+        {% for author in authors %}
+            <li>
+                {{ author.first_name }} {{ author.last_name }} ({{ author.email }})
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>🏢 All Publishers</h2>
+    <ul>
+        {% for publisher in publishers %}
+            <li>
+                <strong>{{ publisher.name }}</strong><br>
+                {{ publisher.address }}, {{ publisher.city }}, {{ publisher.state }}, {{ publisher.country }}<br>
+                Website: <a href="{{ publisher.website }}">{{ publisher.website }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>📌 Add New:</h3>
+    <ul>
+        <li><a href="{% url 'add_author' %}">➕ Add Author</a></li>
+        <li><a href="{% url 'add_publisher' %}">➕ Add Publisher</a></li>
+        <li><a href="{% url 'add_book' %}">➕ Add Book</a></li>
+    </ul>
+
+
+</body>
+</html>
