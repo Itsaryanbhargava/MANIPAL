@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INDEX PAGE</title>
+    </head>
+    <body>
+        <h2>INDEX PAGE TO DISPLAY PAGE AND CATEGORIES</h2>
+        <p>Welcome to the index page of the application!</p>
+        <h3>Categories</h3>
+        {% for category in categories %}
+            <p>Name:{{category.name}}</p> <br>
+            <p>Visits:{{category.visits}}</p> <br>
+            <p>Likes:{{category.likes}}</p> <br>
+        {% endfor %}
+
+        {% for page in pages %}
+            <p>Title:{{page.title}}</p> <br>
+            <p>URL:{{page.url}}</p> <br>
+            <p>Category:{{page.category}}</p> <br>
+            <p>Views:{{page.views}}</p> <br>
+        {% endfor %}
+
+        <a href="{% url 'add_category' %}">Add Category</a><br>
+        <a href="{% url 'add_page' %}">Add Page</a><br>
+    </body>
+</html>

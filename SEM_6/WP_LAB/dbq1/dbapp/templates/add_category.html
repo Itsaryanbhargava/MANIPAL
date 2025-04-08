@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADD CATEGORY</title>
+    </head>
+    <body>
+        <h2>ADD CATEGORY FORM</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'index'%}">backtohome</a>
+    </body>
+</html>
