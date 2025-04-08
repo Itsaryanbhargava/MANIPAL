@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Promotion Check</title>
+</head>
+<body>
+
+<h2>Promotion Eligibility Checker</h2>
+
+<label for="empid">Employee ID:</label>
+<select id="empid">
+    <option value="EMP001">EMP001</option>
+    <option value="EMP002">EMP002</option>
+    <option value="EMP003">EMP003</option>
+</select><br><br>
+
+<label for="doj">Date of Joining:</label>
+<input type="date" id="doj"><br><br>
+
+<button onclick="checkEligibility()">Am I Eligible for Promotion?</button>
+
+<h3 id="result"></h3>
+
+<script>
+function checkEligibility() {
+    var doj = new Date(document.getElementById("doj").value);
+    var today = new Date();
+    var years = today.getFullYear() - doj.getFullYear();
+
+    // Adjust if current month/day is before joining month/day
+    var mDiff = today.getMonth() - doj.getMonth();
+    if (mDiff < 0 || (mDiff === 0 && today.getDate() < doj.getDate())) {
+        years--;
+    }
+
+    if (years > 5) {
+        document.getElementById("result").innerText = "YES";
+    } else {
+        document.getElementById("result").innerText = "NO";
+    }
+}
+</script>
+
+</body>
+</html>
